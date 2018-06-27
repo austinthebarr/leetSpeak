@@ -11,9 +11,12 @@ namespace Leetspeak{
       char[]letters = inputLetters.ToCharArray();
       for(int i = 0; i < letters.Length; i++)
       {
-        letters[i] = TranslateToLeet(letters[i]);
+        if (!(i == 0 && (letters[i] == 's' || letters[i] == 'S')))
+        {
+          letters[i] = TranslateToLeet(letters[i]);
+        }
       }
-
+      Console.WriteLine(letters);
       Console.WriteLine(new String(letters));
     }
 
